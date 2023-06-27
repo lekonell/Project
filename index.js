@@ -4,6 +4,9 @@ const fs = require("fs");
 const cors = require("cors");
 const spawn = require("child_process").spawn;
 
+// const multer = require('multer');
+// const uploader = multer({ dest: __dirname + '/predict_images/' });
+
 const corsOptions = {
 	origin: 'http://localhost',
 	credentials: true
@@ -89,7 +92,7 @@ app.listen(config.SERVER_PORT, () => {
 		if (!config.IMAGE_LIST[image_name]) {
 			var imageData = {
 				image: image_name,
-				caption: [ image_caption ],
+				caption: [image_caption],
 			};
 
 			config.IMAGE_LIST[image_name] = imageData;
